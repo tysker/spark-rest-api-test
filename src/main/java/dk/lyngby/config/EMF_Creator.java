@@ -32,10 +32,12 @@ public class EMF_Creator {
         boolean isDeployed = (System.getenv("DEPLOYED") != null);
 
         Properties props = new Properties();
-        String DB_USERNAME = dotenv.get("DB_USERNAME");
-        String DB_PASSWORD = dotenv.get("DB_PASSWORD");
+//        String DB_USERNAME = dotenv.get("DB_USERNAME");
+//        String DB_PASSWORD = dotenv.get("DB_PASSWORD");
+        String DB_USERNAME = "postgres";
+        String DB_PASSWORD = "postgres";
 
-        if(isDeployed) {
+        if (isDeployed) {
             String DB_NAME = getDBName();
             String CONNECTION_STR = dotenv.get("CONNECTION_STR") + DB_NAME;
 
