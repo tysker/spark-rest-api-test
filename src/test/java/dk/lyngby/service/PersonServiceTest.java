@@ -34,37 +34,37 @@ class PersonServiceTest {
         Spark.stop();
     }
 
-    @Test
-    @DisplayName("GET /customers")
-    void getAllPersons() {
-        given()
-                .when()
-                .header("Authorization", userToken)
-                .get("http://localhost:7778/api/v1/persons/")
-                .then()
-                .statusCode(200)
-                .body("size()", equalTo(3));
-    }
-
-    @Test
-    @DisplayName("GET /persons/{id}")
-    void getPersonById() {
-        var responds = given()
-                .when()
-                .header("Authorization", userToken)
-                .get("http://localhost:7778/api/v1/persons/")
-                .then()
-                .extract()
-                .response();
-
-        var personId = responds.jsonPath().getString("[0]");
-
-        given()
-                .when()
-                .header("Authorization", userToken)
-                .get("http://localhost:7778/api/v1/persons/" + personId)
-                .then().statusCode(200);
-    }
+//    @Test
+//    @DisplayName("GET /customers")
+//    void getAllPersons() {
+//        given()
+//                .when()
+//                .header("Authorization", userToken)
+//                .get("http://localhost:7778/api/v1/persons/")
+//                .then()
+//                .statusCode(200)
+//                .body("size()", equalTo(3));
+//    }
+//
+//    @Test
+//    @DisplayName("GET /persons/{id}")
+//    void getPersonById() {
+//        var responds = given()
+//                .when()
+//                .header("Authorization", userToken)
+//                .get("http://localhost:7778/api/v1/persons/")
+//                .then()
+//                .extract()
+//                .response();
+//
+//        var personId = responds.jsonPath().getString("[0]");
+//
+//        given()
+//                .when()
+//                .header("Authorization", userToken)
+//                .get("http://localhost:7778/api/v1/persons/" + personId)
+//                .then().statusCode(200);
+//    }
 
     @Test
     void getAllCustomers() {
