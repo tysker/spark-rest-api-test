@@ -16,23 +16,23 @@ import static org.hamcrest.Matchers.equalTo;
 
 class PersonServiceTest {
 
-    private static final LoginToken LOGIN_TOKEN = LoginToken.getInstance();
-    private static Object userToken;
-
-    @BeforeAll
-    static void setUpAll() {
-        EMF_Creator.startFacadeWithTestDb();
-        EntityManagerFactory emf = EMF_Creator.createEntityManagerFactoryForTest();
-        TestData.createTestData(emf.createEntityManager());
-        Main.main(new String[]{"7778"});
-        userToken =  LOGIN_TOKEN.getUserToken();
-    }
-
-    @AfterAll
-    static void tearDownAll() {
-        EMF_Creator.endFacadeWithTestDb();
-        Spark.stop();
-    }
+//    private static final LoginToken LOGIN_TOKEN = LoginToken.getInstance();
+//    private static Object userToken;
+//
+//    @BeforeAll
+//    static void setUpAll() {
+//        EMF_Creator.startFacadeWithTestDb();
+//        EntityManagerFactory emf = EMF_Creator.createEntityManagerFactoryForTest();
+//        TestData.createTestData(emf.createEntityManager());
+//        Main.main(new String[]{"7778"});
+//        userToken =  LOGIN_TOKEN.getUserToken();
+//    }
+//
+//    @AfterAll
+//    static void tearDownAll() {
+//        EMF_Creator.endFacadeWithTestDb();
+//        Spark.stop();
+//    }
 
 //    @Test
 //    @DisplayName("GET /customers")
@@ -66,11 +66,11 @@ class PersonServiceTest {
 //                .then().statusCode(200);
 //    }
 
-    @Test
-    void getAllCustomers() {
-    }
-
-    @Test
-    void createCustomer() {
-    }
+//    @Test
+//    void getAllCustomers() {
+//    }
+//
+//    @Test
+//    void createCustomer() {
+//    }
 }
